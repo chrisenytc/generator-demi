@@ -1,0 +1,5 @@
+{<%
+ _.forEach(args.slice(1, args.length), function(arg) {
+  var array = arg.split(':');%>
+ "<%- array[0] %>": "<%- array[1] %>",<% }); %>
+}
