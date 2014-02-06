@@ -2,6 +2,7 @@
 var util = require('util');
 var path = require('path');
 var yeoman = require('yeoman-generator');
+var banner = require('./banner.js');
 
 
 var DemiGenerator = module.exports = function DemiGenerator(args, options, config) {
@@ -20,7 +21,7 @@ DemiGenerator.prototype.askFor = function askFor() {
   var cb = this.async();
 
   // have Yeoman greet the user.
-  console.log(this.yeoman);
+  banner();
 
   var prompts = [
     {
@@ -85,6 +86,7 @@ DemiGenerator.prototype.app = function app() {
   this.mkdir('api/middlewares');
   this.mkdir('api/models');
   this.mkdir('api/services');
+  this.mkdir('api/ssl-cert');
 
   this.directory('api');
 
@@ -101,11 +103,13 @@ DemiGenerator.prototype.app = function app() {
 };
 
 DemiGenerator.prototype.projectfiles = function projectfiles() {
+  this.template('_CONTRIBUTING.md', 'CONTRIBUTING.md');
   this.template('_LICENSE', 'LICENSE');
   this.template('_package.json', 'package.json');
   this.template('_README.md', 'README.md');
   this.copy('app.js', 'app.js');
   this.copy('CHANGELOG', 'CHANGELOG');
+  this.copy('cluster.js', 'cluster.js');
   this.copy('editorconfig', '.editorconfig');
   this.copy('gitignore', '.gitignore');
   this.copy('Gulpfile.js', 'Gulpfile.js');

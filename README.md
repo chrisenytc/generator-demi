@@ -155,7 +155,7 @@ module.exports = {
   /*
    * GET /users/new
    */
-  'new': function (req, res) {
+  new: function (req, res) {
     //
   },
 
@@ -350,7 +350,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## Contributing
 
-Please submit all issues and pull requests to the [enytc/demi](http://github.com/enytc/demi) repository!
+See the [CONTRIBUTING Guidelines](https://github.com/enytc/demi/blob/master/README.md)
 
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/enytc/demi/issues).

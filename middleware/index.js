@@ -12,5 +12,5 @@ var MiddlewareGenerator = module.exports = function MiddlewareGenerator(args, op
 util.inherits(MiddlewareGenerator, yeoman.generators.NamedBase);
 
 MiddlewareGenerator.prototype.files = function files() {
-  this.template('_middleware.js', 'api/middlewares/' + this.name + '.js');
+  this.template('_middleware.js', 'api/middlewares/' + this.name.toLowerCase()  + '.js');
 };
