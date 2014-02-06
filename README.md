@@ -350,7 +350,7 @@ If you'd like to get to know Yeoman better and meet some of his friends, [Grunt]
 
 ## Contributing
 
-See the [CONTRIBUTING Guidelines](https://github.com/enytc/demi/blob/master/README.md)
+See the [CONTRIBUTING Guidelines](https://github.com/enytc/demi/blob/master/CONTRIBUTING.md)
 
 ## Support
 If you have any problem or suggestion please open an issue [here](https://github.com/enytc/demi/issues).
