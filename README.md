@@ -1,6 +1,6 @@
 # Demi Generator [![Build Status](https://secure.travis-ci.org/chrisenytc/generator-demi.png?branch=master)](https://travis-ci.org/chrisenytc/generator-demi) [![NPM version](https://badge-me.herokuapp.com/api/npm/generator-demi.png)](http://badges.enytc.com/for/npm/generator-demi) [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/chrisenytc/generator-demi/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
-> A generator for [Yeoman](http://yeoman.io).
+> A Demi.js Generator for [Yeoman](http://yeoman.io).
 
 
 ## Getting Started
