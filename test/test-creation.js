@@ -1,26 +1,26 @@
 /*global describe, beforeEach, it*/
 'use strict';
 
-var path    = require('path');
+var path = require('path');
 var helpers = require('yeoman-generator').test;
 
 
 describe('demi generator', function () {
-    beforeEach(function (done) {
-        helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
-            if (err) {
-                return done(err);
-            }
+  beforeEach(function (done) {
+    helpers.testDirectory(path.join(__dirname, 'temp'), function (err) {
+      if (err) {
+        return done(err);
+      }
 
-            this.app = helpers.createGenerator('demi:app', [
+      this.app = helpers.createGenerator('demi:app', [
                 '../../app'
             ]);
-            done();
-        }.bind(this));
-    });
+      done();
+    }.bind(this));
+  });
 
-    it('creates expected files', function (done) {
-        var expected = [
+  it('creates expected files', function (done) {
+    var expected = [
             // add files you expect to exist here.
             'api',
             'api/config',
@@ -61,9 +61,9 @@ describe('demi generator', function () {
             'api/models/task.js',
             'api/services',
             'api/services/names.json',
-            'api/ssl-cert',
-            'api/ssl-cert/.gitkeep',
             'lib',
+            'lib/ssl',
+            'lib/ssl/.gitkeep',
             'lib/debugger.js',
             'lib/demi.js',
             'lib/demiHttp.js',
@@ -91,19 +91,19 @@ describe('demi generator', function () {
             'yuidoc.json'
         ];
 
-        helpers.mockPrompt(this.app, {
-          'appName': 'bella',
-          'appDescription': 'The best project ever',
-          'appVersion': '0.1.0',
-          'authorName': 'Christopher EnyTC',
-          'authorEmail': 'chrisenytc@gmail.com',
-          'userName': 'chrisenytc',
-          'enableTravis': true
-        });
-        this.app.options['skip-install'] = true;
-        this.app.run({}, function () {
-            helpers.assertFiles(expected);
-            done();
-        });
+    helpers.mockPrompt(this.app, {
+      'appName': 'bella',
+      'appDescription': 'The best project ever',
+      'appVersion': '0.1.0',
+      'authorName': 'Christopher EnyTC',
+      'authorEmail': 'chrisenytc@gmail.com',
+      'userName': 'chrisenytc',
+      'enableTravis': true
     });
+    this.app.options['skip-install'] = true;
+    this.app.run({}, function () {
+      helpers.assertFiles(expected);
+      done();
+    });
+  });
 });

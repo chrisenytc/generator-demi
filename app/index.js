@@ -9,7 +9,9 @@ var DemiGenerator = module.exports = function DemiGenerator(args, options, confi
   yeoman.generators.Base.apply(this, arguments);
 
   this.on('end', function () {
-    this.installDependencies({ skipInstall: options['skip-install'] });
+    this.installDependencies({
+      skipInstall: options['skip-install']
+    });
   });
 
   this.pkg = JSON.parse(this.readFileAsString(path.join(__dirname, '../package.json')));
@@ -86,12 +88,12 @@ DemiGenerator.prototype.app = function app() {
   this.mkdir('api/middlewares');
   this.mkdir('api/models');
   this.mkdir('api/services');
-  this.mkdir('api/ssl-cert');
 
   this.directory('api');
 
   //Lib folder
   this.mkdir('lib');
+  this.mkdir('lib/ssl');
 
   this.directory('lib');
 
@@ -118,7 +120,7 @@ DemiGenerator.prototype.projectfiles = function projectfiles() {
   this.copy('Procfile', 'Procfile');
   this.copy('yuidoc.json', 'yuidoc.json');
   //Check if travis option is enabled
-  if(this.enableTravis) {
+  if (this.enableTravis) {
     this.copy('travis.yml', '.travis.yml');
   }
 };

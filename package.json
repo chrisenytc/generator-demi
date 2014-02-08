@@ -1,7 +1,7 @@
 {
   "name": "generator-demi",
-  "version": "0.1.1",
-  "description": "A generator for Yeoman",
+  "version": "0.1.2",
+  "description": "A Demi.js Generator for Yeoman",
   "keywords": [
     "yeoman-generator"
   ],

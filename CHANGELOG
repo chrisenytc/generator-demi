@@ -1,5 +1,9 @@
+v0.1.2:
+  date: 2014-02-08
+  changes:
+    - Support for Demi.js v0.3.0
 v0.1.1:
-  date: 2014-05-02
+  date: 2014-02-05
   changes:
     - Support for Demi.js v0.2.0
 v0.1.0:
