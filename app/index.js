@@ -8,7 +8,7 @@ var banner = require('./banner.js');
 var DemiGenerator = module.exports = function DemiGenerator(args, options, config) {
   yeoman.generators.Base.apply(this, arguments);
 
-  this.on('end', function () {
+  this.on('end', function() {
     this.installDependencies({
       skipInstall: options['skip-install']
     });
@@ -25,41 +25,33 @@ DemiGenerator.prototype.askFor = function askFor() {
   // have Yeoman greet the user.
   banner();
 
-  var prompts = [
-    {
-      name: 'appName',
-      message: 'What the project name?'
-    },
-    {
-      name: 'appDescription',
-      message: 'What the description?'
-    },
-    {
-      name: 'appVersion',
-      message: 'What the project version?',
-      default: '0.1.0'
-    },
-    {
-      name: 'authorName',
-      message: 'What the author name?',
-    },
-    {
-      name: 'authorEmail',
-      message: 'What the author email?',
-    },
-    {
-      name: 'userName',
-      message: 'What the github username?',
-    },
-    {
-      type: 'confirm',
-      name: 'enableTravis',
-      message: 'Would you like to enable travis support?',
-      default: true
-    }
-  ];
+  var prompts = [{
+    name: 'appName',
+    message: 'What the project name?'
+  }, {
+    name: 'appDescription',
+    message: 'What the description?'
+  }, {
+    name: 'appVersion',
+    message: 'What the project version?',
+    default: '0.1.0'
+  }, {
+    name: 'authorName',
+    message: 'What the author name?',
+  }, {
+    name: 'authorEmail',
+    message: 'What the author email?',
+  }, {
+    name: 'userName',
+    message: 'What the github username?',
+  }, {
+    type: 'confirm',
+    name: 'enableTravis',
+    message: 'Would you like to enable travis support?',
+    default: true
+  }];
 
-  this.prompt(prompts, function (props) {
+  this.prompt(prompts, function(props) {
     this.appName = props.appName;
     this.appDescription = props.appDescription;
     this.appVersion = props.appVersion;
@@ -88,6 +80,7 @@ DemiGenerator.prototype.app = function app() {
   this.mkdir('api/middlewares');
   this.mkdir('api/models');
   this.mkdir('api/services');
+  this.mkdir('api/sockets');
 
   this.directory('api');
 

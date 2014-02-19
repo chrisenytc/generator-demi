@@ -44,6 +44,7 @@ Available generators:
 * [demi:middleware](#middleware)
 * [demi:model](#model)
 * [demi:service](#service)
+* [demi:socket](#socket)
 * [demi:make](#test)
 
 **Note: Generators are to be run from the root directory of your app.**
@@ -302,6 +303,44 @@ Produces `api/services/names.json`:
 }
 ```
 
+### Socket
+Generates a socket in `api/sockets`.
+
+Example:
+```bash
+yo demi:socket test index
+```
+
+Produces `api/sockets/test.js`:
+```javascript
+/*
+ * demi
+ * https://github.com/enytc/demi
+ *
+ * Copyright (c) 2014 EnyTC Corporation
+ * Licensed under the BSD license.
+ */
+
+'use strict';
+
+module.exports = {
+
+
+  /*
+   * SOCKET test/index
+   */
+
+  index: {
+    on: function (data) {
+      console.log(data);
+      this.emit('test/index', 'testing sockets');
+    },
+    emit: 'test this'
+  },
+
+};
+```
+
 ### Test
 Generates a test in `test/`.
 
@@ -323,8 +362,8 @@ Produces `test/tasks_test.js`:
 'use strict';
 
 var supertest = require('supertest');
-var Demi = require('../lib/demi.js');
-var request = supertest(new Demi());
+var demi = require('../lib/demi.js');
+var request = supertest(demi());
 var chai = require('chai');
 chai.expect();
 chai.should();
