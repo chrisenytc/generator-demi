@@ -41,7 +41,9 @@
         "mongoose-timestamp": "~0.2.0",
         "mongoose-validator": "~0.2.2",
         "newrelic": "latest",
-        "forever": "~0.10.11"
+        "forever": "~0.10.11",
+        "underscore": "~1.8.3",
+        "underscore.string": "~3.0.3"
     },
     "devDependencies": {
         "mocha": "~1.10.0",
